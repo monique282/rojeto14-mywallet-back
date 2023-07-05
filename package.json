@@ -1,0 +1,31 @@
+{
+  "name": "rojeto14-mywallet-back",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "scripts": {
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monique282/rojeto14-mywallet-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monique282/rojeto14-mywallet-back/issues"
+  },
+  "homepage": "https://github.com/monique282/rojeto14-mywallet-back#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "mongodb": "^5.6.0"
+  }
+}
