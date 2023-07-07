@@ -35,12 +35,12 @@ export async function login(req, res) {
         };
         // token de altorização pra entrar no
         const token = uuid();
-        
+
         await db.collection("sessao").insertOne({
             token,
             idUsuario: usuario._id
         })
-        return res.status(200).send(token);
+        return res.status(200).send({ token: token });
     } catch (erro) {
         res.status(500).send(erro.message);
     }
