@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import { db } from '../app.js';
+import { db } from '../dataBase/conecsao.js';
 import joi from "joi";
 import { v4 as uuid } from 'uuid';
 

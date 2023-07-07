@@ -1,4 +1,4 @@
-import { db } from '../app.js';
+import { db } from '../dataBase/conecsao.js';
 
 export async function token (req, res) {
     const { authorization } = req.headers;
