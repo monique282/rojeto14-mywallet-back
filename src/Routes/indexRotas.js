@@ -2,15 +2,17 @@
 // lebrando que todas as Rotas aqui vai pro app
 
 import { Router } from "express";
+
 import cadastroRouter from "./rotasCadastro.js";
 import loginRouter from "./rotasLogin.js";
-import tokenRouter from "./rotasToken.js";
+import transaçõesRouter from "./rotastTransações.js";
+
 
 
 const router = Router()
 
 router.use(cadastroRouter);
 router.use(loginRouter);
-router.use(tokenRouter);
+router.use(transaçõesRouter)
 
 export default router

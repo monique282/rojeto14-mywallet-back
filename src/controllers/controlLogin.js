@@ -1,4 +1,4 @@
-// esse arquivo aqui serve para executar todas as funções que eu preciso
+// esse arquivo aqui serve para executar o ligin
 // esse arquivo é chamado la em Routes
 // esse arquivo aqui é enviado por um post para faser o login
 
