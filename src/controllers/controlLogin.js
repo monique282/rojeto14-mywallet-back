@@ -1,24 +1,14 @@
+// esse arquivo aqui serve para executar todas as funções que eu preciso
+// esse arquivo é chamado la em Routes
+// esse arquivo aqui é enviado por um post para faser o login
+
 import bcrypt from 'bcrypt';
 import { db } from '../dataBase/conecsao.js';
-import joi from "joi";
 import { v4 as uuid } from 'uuid';
+
 
 export async function login(req, res) {
     const { email, senha } = req.body
-
-    // fazer as verificaçoes
-    const seTaCerto = joi.object({
-        email: joi.string().email().required(),
-        senha: joi.string().required().min(3)
-    })
-    const validarSeTaCerto = seTaCerto.validate(req.body, { abortEarly: false });
-    // o abortEarly serve pra procurar todos os requisitos que nao passou no joi
-    if (validarSeTaCerto.error) {
-        const erroEspecifico = validarSeTaCerto.error.details.map(qual => qual.message);
-        return res.status(422).send(erroEspecifico);
-
-    };
-
 
     try {
         // validar o usuario
@@ -40,7 +30,7 @@ export async function login(req, res) {
             token,
             idUsuario: usuario._id
         })
-        return res.status(200).send({ token: token });
+        return res.status(200).send({ token: token, nome: usuario.nome });
     } catch (erro) {
         res.status(500).send(erro.message);
     }

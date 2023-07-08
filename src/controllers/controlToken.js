@@ -1,3 +1,5 @@
+
+
 import { db } from '../dataBase/conecsao.js';
 
 export async function token (req, res) {
