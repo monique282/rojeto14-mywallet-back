@@ -18,6 +18,9 @@ export const seTaCertoLogin = joi.object({
 
 export const seValorTaCerto = joi.object({
     valor: joi.number().positive().precision(2).required(),
+    descricao: joi.string().min(1).max(20).required(),
+    tipo: joi.string().valid("entrada", "saida").required(),
+    email: joi.string().required()
    
 })
 

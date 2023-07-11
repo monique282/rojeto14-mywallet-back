@@ -29,7 +29,6 @@ export async function SaidaEntrada(req, res) {
     const { valor, descricao, tipo, email } = req.body;
 
     try { 
-
         await db.collection("operacao").insertOne({ valor, descricao, tipo, data: dayjs().format('DD/MM'), email });
         return res.sendStatus(201);
     } catch (erro) {
