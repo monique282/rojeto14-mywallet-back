@@ -28,7 +28,8 @@ export async function login(req, res) {
 
         await db.collection("sessao").insertOne({
             token,
-            idUsuario: usuario._id
+            idUsuario: usuario._id,
+            email
         })
         return res.status(200).send({ token: token, nome: usuario.nome });
     } catch (erro) {

@@ -11,9 +11,7 @@ export async function validarToken (req, res, next) {
         if (!sessao) {
             return res.sendStatus(401);
         }
-        // const usuario = await db.collection("usuarios").findOne({ _id: sessao.idUsuario });
-        // delete usuario.senha;
-        // res.send(usuario);
+        res.locals.token = token
         next();
     } catch (err) {
         res.status(500).send(err.message);
