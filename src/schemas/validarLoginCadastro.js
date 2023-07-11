@@ -16,4 +16,9 @@ export const seTaCertoLogin = joi.object({
     senha: joi.string().required().min(3)
 })
 
+export const seValorTaCerto = joi.object({
+    valor: joi.number().positive().precision(2).required(),
+   
+})
+
 
