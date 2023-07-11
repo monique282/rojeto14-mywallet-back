@@ -8,7 +8,8 @@ import { db } from '../dataBase/conecsao.js';
 
 
 export async function delet (req, res) {
-    const { token } = req.body;
+    const { authorization } = req.headers;
+    const token = authorization?.replace("Bearer ", "");
 
     try {
        
