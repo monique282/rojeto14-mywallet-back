@@ -6,7 +6,6 @@
 import { db } from '../dataBase/conecsao.js';
 
 
-
 export async function delet (req, res) {
     const { authorization } = req.headers;
     const token = authorization?.replace("Bearer ", "");

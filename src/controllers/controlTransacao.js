@@ -8,14 +8,14 @@ import dayjs from 'dayjs';
 
 
 export async function listaTransações(req, res) {
-    const { email } = req.body;
+    const { email } = req.query;
 
-   // receber o email pelo body
+    // receber o email pelo body
     try {
 
         // verificar pelo email 
-        const transacao = await (await db.collection("operacao").find({ email }).toArray()).reverse();
-       
+        const transacao = await db.collection("operacao").find({ email }).sort({ _id: -1 }).toArray();
+
         return res.send(transacao);
     } catch (erro) {
         res.status(500).send(erro.message);
