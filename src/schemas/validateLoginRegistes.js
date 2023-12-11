@@ -15,5 +15,5 @@ export const correctRegister = joi.object({
 export const correctValue = joi.object({
     value: joi.number().positive().precision(2).required(),
     description: joi.string().min(1).max(20).required(),
-    type: joi.string().valid("entrada", "saida").required()
+    type: joi.string().valid("entrada", "saida").required(),
 });
