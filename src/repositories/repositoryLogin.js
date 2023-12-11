@@ -8,6 +8,6 @@ async function login(token, id, email) {
         email
     })
     return login
-}
+};
 
 export const repositoryLogin = { login }

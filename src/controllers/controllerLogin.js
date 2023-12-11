@@ -1,11 +1,9 @@
-
-
 import { serviceLogin } from '../service/serviceLogin.js';
 import httpStatus from "http-status";
 
 export async function login(req, res) {
     const { email, password } = req.body
-     try {
+    try {
         const login = await serviceLogin.login(email, password);
         res.status(httpStatus.OK).send(login);
     } catch (error) {
@@ -14,5 +12,5 @@ export async function login(req, res) {
         } else {
             res.status(httpStatus.INTERNAL_SERVER_ERROR).send("Erro interno do servidor");
         }
-    }
-}
+    };
+};

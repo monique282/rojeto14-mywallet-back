@@ -1,6 +1,6 @@
 import { db } from '../dataBase/connectionDb.js';
 
-export async function validateToken (req, res, next) {
+export async function validateToken(req, res, next) {
     const { authorization } = req.headers;
     const token = authorization?.replace("Bearer ", "");
     if (!token) {
@@ -16,5 +16,4 @@ export async function validateToken (req, res, next) {
     } catch (err) {
         res.status(500).send(err.message);
     }
-
 }
